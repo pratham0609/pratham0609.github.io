@@ -6,44 +6,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
 
-  <!-- Put your site title here -->
-  <title>
-    Pratham Dandale | IIIT Bangalore
-  </title>
+  <title>Pratham Dandale</title>
 
-  <meta name="description" content="Add small description of yourslef.">
-  <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
-  <meta name="keywords" content="Put your name, skills and some coding keywords" />
+  <meta name="description"
+    content="Backend-focused software engineer with experience in distributed systems, GenAI workflows, and scalable APIs." />
+  <meta name="keywords"
+    content="Pratham Dandale, Software Engineer, Backend, Node.js, Java, Redis, PostgreSQL, GenAI" />
+
   <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
 
   <!-- ***** Header ***** -->
-
   <header class="header" role="banner" id="top">
     <div class="row">
       <nav class="nav" role="navigation">
         <ul class="nav__items">
-          <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-
-          <li class="nav__item">
-            <a href="#about" class="nav__link">About</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li>
+          <li class="nav__item"><a href="#work" class="nav__link">Projects</a></li>
+          <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
       </nav>
     </div>
+
     <div class="header__text-box row">
       <div class="header__text">
         <h1 class="heading-primary">
-          <!-- Replace the following name with your name -->
           <span>Pratham Dandale</span>
         </h1>
-        <!-- Put a small paragraph about yourself -->
-        <p>Student at IIIT Bangalore.</p>
+        <p>
+          Backend-focused engineer with experience building scalable APIs,
+          real-time systems, and GenAI workflows.
+        </p>
         <a href="#contact" class="btn btn--pink">Get in touch</a>
       </div>
     </div>
@@ -51,190 +47,254 @@
 
   <main role="main">
 
-    <!-- ***** Work ***** -->
-
+    <!-- ***** Projects ***** -->
     <section class="work" id="work">
       <div class="row">
-        <h2>My Work</h2>
+        <h2>Projects</h2>
+
         <div class="work__boxes">
 
-          <!-- Each div with the work__box class is a project. -->
+                <!-- Order Execution Engine -->
+        <div class="work__box">
+        <div class="work__text">
+          <h3>Order Execution Engine</h3>
+        
+          <p>
+            Designed and implemented an order execution backend focused on Market Orders,
+            demonstrating realistic execution flow, routing logic, retries, and real-time
+            lifecycle visibility using a mocked DEX environment.
+          </p>
+        
+          <p>
+            Orders are submitted via a Fastify REST API and processed asynchronously using
+            a BullMQ-backed worker. The system routes between mocked Raydium and Meteora routers,
+            selects the best net quote (price minus fee), applies optional slippage checks,
+            and simulates execution delays and transaction hashes.
+          </p>
+        
+          <p>
+            Each order transitions through well-defined lifecycle states
+            (<code>pending</code>, <code>routing</code>, <code>building</code>,
+            <code>submitted</code>, <code>confirmed</code>, <code>failed</code>),
+            which are persisted to PostgreSQL and streamed live to clients over WebSockets.
+          </p>
+        
+          <ul class="work__list">
+            <li>Node.js, Fastify</li>
+            <li>PostgreSQL (order persistence)</li>
+            <li>Redis + BullMQ (queue, retries, concurrency)</li>
+            <li>WebSockets (lifecycle streaming)</li>
+            <li>Mock DEX routers (Raydium, Meteora)</li>
+          </ul>
+        
+          <div class="work__links">
+            <a href="https://github.com/pratham0609" target="_blank" class="link__text">
+              View Project <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
 
-          
-<!--          Project1-->
-          
-          
-          
+
+          <!-- Travel Diaries -->
           <div class="work__box">
             <div class="work__text">
-              <h3>Travel Blogging Application</h3>
+              <h3>Travel Diaries – Blogging Platform</h3>
+
+              <p><strong>Problem</strong></p>
               <p>
-                 A blogging web-app that allows users to share their travel experiences, read other users blogs and add
-comments to their blogs. 
-                Efficiently managed and retrieved data by integrating a cloud-hosted MongoDB database with Mongoose, enabling
-seamless CRUD operations.
-                Implemented backend through REST API and utilized React Router for dynamic URL-based routing, enabling smooth
-transitions between components, and ensured secure access to user-specific content through state management using
-React’s Context API.
-                Constructed the CI/CD pipeline with the help of Jenkins for performing builds with npm, used separate Docker images for the back-end and front-end, Docker-Compose to manage them and Ansible for exhibiting IaaS
-            deployment
+                Needed a full-stack blogging platform that allowed users to create,
+                read, and manage blog posts with secure authentication and smooth navigation.
               </p>
+
+              <p><strong>Solution</strong></p>
+              <p>
+                Developed a MERN-based blogging application with a REST API backend.
+                Implemented authentication using JWT, managed application state with
+                React Context API, and enabled dynamic routing using React Router.
+                The application was containerized and deployed using a CI/CD pipeline.
+              </p>
+
+              <p><strong>Tech</strong></p>
               <ul class="work__list">
-                <li>React</li>
-                <li>Node</li>
-                <li>MongoDB</li>
-       
+                <li>React, Node.js, Express</li>
+                <li>MongoDB, Mongoose</li>
+                <li>Docker, Jenkins, Ansible</li>
               </ul>
 
               <div class="work__links">
                 <a href="https://github.com/pratham0609/SPE-TravelDiaries" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/pratham0609/SPE-TravelDiaries" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                  View Project <span>&rarr;</span>
                 </a>
               </div>
             </div>
-            <div class="work__image-box">
-              <img src="./images/Portfolio.PNG" class="work__image" alt="Project 1" />
-            </div>
           </div>
 
-          
-          
-<!--            Project2-->
-          
-          
+          <!-- Mutation Testing -->
           <div class="work__box">
             <div class="work__text">
-              <h3>IAS computer simulation</h3>
+              <h3>Mutation Testing for Matrix & Vector Libraries</h3>
+
+              <p><strong>Problem</strong></p>
               <p>
-                Used the PIT mutation testing tool on source code comprising of Matrix and Vector operations. 
-                
-                Wrote  J-unit test cases to detect the mutations brought by variety of unit and integration level 
-                mutation operators defined in PIT. 
-                
-                Achieved 90% mutation coverage and 91% test strength.
-                
-                Identified and mitigated a gap in test coverage by implementing boundary value analysis.
+                Traditional unit tests were insufficient to reveal weak test cases
+                and undetected logical errors in mathematical libraries.
               </p>
-              
+
+              <p><strong>Solution</strong></p>
+              <p>
+                Applied PIT mutation testing on Java-based Matrix and Vector libraries.
+                Wrote JUnit test cases targeting unit- and integration-level mutations
+                and improved coverage by identifying missing boundary tests.
+              </p>
+
+              <p><strong>Tech</strong></p>
+              <ul class="work__list">
+                <li>Java, JUnit</li>
+                <li>PIT Mutation Testing</li>
+              </ul>
+
               <div class="work__links">
-                <a href="https://github.com/pratham0609/Mutation-Testing-Matrix-Vector" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/pratham0609/Mutation-Testing-Matrix-Vector" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                <a href="https://github.com/pratham0609/Mutation-Testing-Matrix-Vector" target="_blank"
+                  class="link__text">
+                  View Project <span>&rarr;</span>
                 </a>
               </div>
             </div>
           </div>
-          
-          
-<!--            Project3-->
-          
-          
-          
+
+          <!-- Library Management -->
           <div class="work__box">
             <div class="work__text">
-              <h3>24 Bit BMP to TIFF converter</h3>
-              <p>
-                 A complete library management system with various functionalities supported in a menu driven system.
+              <h3>Library Management System</h3>
 
-                Functionalities like add, delete, search, issue(book) implemented, and similar functionalities for student also
-implemented.
-                
-Constraints such as utilizing indexing, preventing deletion of issued books, ensuring availability of books and checking if
-student has not already issued another book defined
+              <p><strong>Problem</strong></p>
+              <p>
+                Required a system to manage books, students, and issue records
+                while enforcing constraints such as availability and issuance limits.
               </p>
-              
+
+              <p><strong>Solution</strong></p>
+              <p>
+                Built a menu-driven library management system in C with SQL-backed storage.
+                Implemented indexing, constraint checks, and validations to ensure
+                consistency across library operations.
+              </p>
+
+              <p><strong>Tech</strong></p>
+              <ul class="work__list">
+                <li>C, SQL</li>
+                <li>Indexing, Constraint Enforcement</li>
+              </ul>
+
               <div class="work__links">
-                
-                <a href="https://github.com/pratham0609/Library-Management-System" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                <a href="https://github.com/pratham0609/Library-Management-System" target="_blank"
+                  class="link__text">
+                  View Project <span>&rarr;</span>
                 </a>
               </div>
             </div>
-            <div class="work__image-box">
-              <img src="./images/read.bmp" class="work__image" alt="BMP" />
-            </div>
           </div>
 
-          
-       
         </div>
       </div>
     </section>
 
+    <!-- ***** Experience ***** -->
+    <section class="experience" id="experience">
+      <div class="row">
+        <h2>Experience</h2>
+
+        <div class="work__box">
+          <div class="work__text">
+            <h3>Axtria — Analyst</h3>
+            <p>
+              Working on GenAI-focused systems involving retrieval-augmented generation
+              (RAG) workflows and backend integrations.
+            </p>
+            <ul class="work__list">
+              <li>Built Python-based RAG workflows using LangChain</li>
+              <li>Integrated LLM APIs using Azure OpenAI</li>
+              <li>Worked with vector-based retrieval as part of GenAI pipelines</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work__box">
+          <div class="work__text">
+            <h3>Amazon — Software Development Engineer Intern</h3>
+            <p>
+              Worked on backend services for internal systems, contributing to
+              API development and service-level enhancements.
+            </p>
+            <ul class="work__list">
+              <li>Developed backend components using Java and Spring Boot</li>
+              <li>Worked with RESTful APIs in a microservices environment</li>
+              <li>Collaborated with full-time engineers through code reviews and design discussions</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- ***** About ***** -->
-
     <section class="about" id="about">
       <div class="row">
         <h2>About Me</h2>
         <div class="about__content">
           <div class="about__text">
-            <!-- Replace the below paragraph with info about yourself -->
-            
             <p>
-                Post graduate student ( Computer Science ) at IIIT Bangalore
+              I am a Computer Science graduate from IIIT Bangalore with hands-on
+              experience in backend development, distributed systems,
+              and applied machine learning projects.
             </p>
-                    
-          
+            <p>
+              My interests include building scalable backend architectures,
+              working with real-time systems, and applying GenAI techniques
+              to practical engineering problems.
+            </p>
+          </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- ***** Contact ***** -->
-
   <section class="contact" id="contact">
     <div class="row">
       <h2>Get in Touch</h2>
       <div class="contact__info">
-
-      <a href="mailto:pratham.dandale@iitb.ac.in" class="btn">pratham.dandale@iitb.ac.in</a>
+        <a href="mailto:pratham.dandale@iitb.ac.in" class="btn">
+          pratham.dandale@iitb.ac.in
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ***** Footer ***** -->
-
   <footer role="contentinfo" class="footer">
     <div class="row">
-      <!-- Update the links to point to your accounts -->
       <ul class="footer__social-links">
-
         <li class="footer__social-link-item">
-          <a href="https://github.com/pratham0609/" title="Link to Github Profile">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github">
+          <a href="https://github.com/pratham0609/" title="GitHub">
+            <img src="./images/github.svg" class="footer__social-image" alt="GitHub">
           </a>
         </li>
-
         <li class="footer__social-link-item">
-          <a href="https://www.linkedin.com/in/prathamdandale/">
-            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
+          <a href="https://www.linkedin.com/in/prathamdandale/" title="LinkedIn">
+            <img src="./images/linkedin.svg" class="footer__social-image" alt="LinkedIn">
           </a>
         </li>
       </ul>
-
-                                                                                                                         
-      <!-- If you give me some credit by keeping the below paragraph, will be huge for me 😊 Thanks. -->
-<!--       <p>
-        &copy; 2020 - Template designed & developed by <a href="https://nisar.dev" class="link">Nisar</a>.
-      </p> -->
-<!--       <div class="footer__github-buttons">
-        <iframe
-          src="https://ghbtns.com/github-btn.html?user=nisarhassan12&repo=portfolio-template&type=watch&count=true"
-          frameborder="0" scrolling="0" width="170" height="20" title="Watch Portfolio Template on GitHub">
-        </iframe>
-      </div> -->
     </div>
   </footer>
 
   <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
+    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image" />
   </a>
+
   <script src="./index.js"></script>
 </body>
 
