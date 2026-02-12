@@ -53,6 +53,48 @@
         <h2>Projects</h2>
 
         <div class="work__boxes">
+              <!-- Prosp – AI Outreach Mini-SaaS -->
+<div class="work__box">
+  <div class="work__text">
+    <h3>Prosp – AI Outreach Mini-SaaS</h3>
+
+    <p>
+      Built a production-style mini SaaS that automates personalized cold outreach
+      and intelligent follow-ups for SDR workflows.
+    </p>
+
+    <p>
+      The system generates AI-personalized emails, sends them using a real email
+      provider, and schedules follow-ups automatically — while preventing race
+      conditions if a lead replies before the follow-up is sent.
+    </p>
+
+    <p>
+      Architected with a separated API and background worker using Redis + BullMQ,
+      ensuring reliable delayed execution, retry logic, and persistence-backed
+      state validation.
+    </p>
+
+    <ul class="work__list">
+      <li>Next.js (Frontend – deployed on Vercel)</li>
+      <li>Fastify + Node.js (API)</li>
+      <li>PostgreSQL (Persistence via Prisma)</li>
+      <li>Redis + BullMQ (Background Jobs)</li>
+      <li>OpenAI (LLM email generation)</li>
+      <li>Resend (Real email delivery)</li>
+    </ul>
+
+    <div class="work__links">
+      <a href="https://prosp-prod.vercel.app" target="_blank" class="link__text">
+        Live Demo <span>&rarr;</span>
+      </a>
+
+      <a href="https://github.com/pratham0609/Prosp" target="_blank" class="link__text" style="margin-left: 2rem;">
+        View Code <span>&rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
 
                 <!-- Order Execution Engine -->
         <div class="work__box">
